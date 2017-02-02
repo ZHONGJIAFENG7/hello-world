@@ -1,0 +1,27 @@
+public class N {
+	public static void orange() throws Exception{
+		Exception exception = new Exception("error");      //why the "error" word can be output ????
+		//String s = exception.getMessage();
+		//System.out.println(s);
+	}
+	@SuppressWarnings("static-access")
+	public static void main(String[] args) throws Exception {
+		N n1 = new N();
+		n1.orange();
+		//Exception a = new Exception();
+	}
+}
+  /**
+  *it is from API, but there is no invoking
+    public Exception(String message) {
+        super(message);
+    }
+            |
+            |
+            |
+            V
+    public Throwable(String message) {
+        fillInStackTrace();
+        detailMessage = message;
+    }
+  */
